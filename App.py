@@ -27,43 +27,49 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-        .stApp {
-            background: linear-gradient(180deg, #f7fbff 0%, #ffffff 45%, #f8fafc 100%);
-        }
         .hero {
             padding: 1.6rem 1.8rem;
             border-radius: 22px;
-            background: linear-gradient(135deg, #0f766e 0%, #2563eb 100%);
-            color: white;
+            border: 1px solid rgba(99, 175, 96, 0.28);
+            background:
+                radial-gradient(circle at top left, rgba(76, 175, 80, 0.22), transparent 55%),
+                linear-gradient(135deg, rgba(46, 125, 50, 0.16), rgba(30, 136, 229, 0.10));
+            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.12);
             margin-bottom: 1rem;
-            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.18);
         }
-        .hero h1 { margin: 0 0 .35rem 0; font-size: 2.15rem; }
-        .hero p { margin: 0; opacity: .92; font-size: 1rem; }
+        .hero h1 {
+            margin: 0 0 .35rem 0;
+            font-size: 2.15rem;
+            background: linear-gradient(90deg, #43a047, #1e88e5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p { margin: 0; opacity: .82; font-size: 1rem; }
         .info-card {
             padding: 1rem 1.1rem;
-            border: 1px solid #dbeafe;
+            border: 1px solid rgba(99, 175, 96, 0.25);
             border-radius: 16px;
-            background: rgba(255, 255, 255, .92);
-            box-shadow: 0 6px 16px rgba(15, 23, 42, .05);
+            background: rgba(76, 175, 80, 0.04);
         }
         .prediction-box {
             padding: 1.15rem;
             border-radius: 18px;
-            border: 1px solid #bbf7d0;
-            background: linear-gradient(135deg, #f0fdf4 0%, #ecfeff 100%);
+            border: 1px solid rgba(99, 175, 96, 0.25);
+            background: rgba(76, 175, 80, 0.05);
         }
         div[data-testid="stMetric"] {
-            background: white;
-            border: 1px solid #e2e8f0;
+            border: 1px solid rgba(99, 175, 96, 0.22);
             padding: .75rem;
             border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, .05);
+            background: rgba(76, 175, 80, 0.05);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
         }
-        section[data-testid="stSidebar"] {
-            background: linear-gradient(180deg, #eff6ff 0%, #f8fafc 100%);
+        div[data-testid="stMetric"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(46, 125, 50, 0.15);
         }
-        .small-note { color: #475569; font-size: .9rem; }
+        .small-note { opacity: .75; font-size: .9rem; }
     </style>
     """,
     unsafe_allow_html=True,
@@ -194,6 +200,11 @@ st.markdown(
 # Sidebar controls
 # ---------------------------------------------------------
 with st.sidebar:
+    st.header("🌿 เกี่ยวกับโมเดล")
+    st.write("อัลกอริทึม: **Decision Tree**")
+    st.write("Dataset: **Iris** (150 ตัวอย่าง, 3 สายพันธุ์)")
+    st.divider()
+
     st.header("⚙️ ตั้งค่าโมเดล")
     criterion_label = st.selectbox(
         "เกณฑ์การแบ่งโหนด",
