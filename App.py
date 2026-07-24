@@ -30,17 +30,17 @@ st.markdown(
         .hero {
             padding: 1.6rem 1.8rem;
             border-radius: 22px;
-            border: 1px solid rgba(99, 175, 96, 0.28);
+            border: 1px solid rgba(46, 125, 50, 0.28);
             background:
-                radial-gradient(circle at top left, rgba(76, 175, 80, 0.22), transparent 55%),
-                linear-gradient(135deg, rgba(46, 125, 50, 0.16), rgba(30, 136, 229, 0.10));
+                radial-gradient(circle at top left, rgba(102, 187, 106, 0.22), transparent 55%),
+                linear-gradient(135deg, rgba(46, 125, 50, 0.16), rgba(102, 187, 106, 0.10));
             box-shadow: 0 10px 30px rgba(46, 125, 50, 0.12);
             margin-bottom: 1rem;
         }
         .hero h1 {
             margin: 0 0 .35rem 0;
             font-size: 2.15rem;
-            background: linear-gradient(90deg, #43a047, #1e88e5);
+            background: linear-gradient(90deg, #2e7d32, #66bb6a);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -48,21 +48,21 @@ st.markdown(
         .hero p { margin: 0; opacity: .82; font-size: 1rem; }
         .info-card {
             padding: 1rem 1.1rem;
-            border: 1px solid rgba(99, 175, 96, 0.25);
+            border: 1px solid rgba(46, 125, 50, 0.25);
             border-radius: 16px;
-            background: rgba(76, 175, 80, 0.04);
+            background: rgba(102, 187, 106, 0.04);
         }
         .prediction-box {
             padding: 1.15rem;
             border-radius: 18px;
-            border: 1px solid rgba(99, 175, 96, 0.25);
-            background: rgba(76, 175, 80, 0.05);
+            border: 1px solid rgba(46, 125, 50, 0.25);
+            background: rgba(102, 187, 106, 0.05);
         }
         div[data-testid="stMetric"] {
-            border: 1px solid rgba(99, 175, 96, 0.22);
+            border: 1px solid rgba(46, 125, 50, 0.22);
             padding: .75rem;
             border-radius: 16px;
-            background: rgba(76, 175, 80, 0.05);
+            background: rgba(102, 187, 106, 0.05);
             transition: transform 0.15s ease, box-shadow 0.15s ease;
         }
         div[data-testid="stMetric"]:hover {
